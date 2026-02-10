@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Panthèra IA Chat Interface</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #chat-container { width: 50%; margin: auto; }
+        #messages { border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: scroll; }
+        #user-input { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <h1>Welcome to the Panthèra IA Chat Interface</h1>
+        <div id="messages">
+            <p><strong>Bot:</strong> How can I assist you today?</p>
+        </div>
+        <input type="text" id="user-input" placeholder="Type a message..." />
+        <button id="send-btn">Send</button>
+    </div>
+    <script>
+        const sendBtn = document.getElementById('send-btn');
+        const userInput = document.getElementById('user-input');
+        const messages = document.getElementById('messages');
+
+        sendBtn.onclick = () => {
+            const userMessage = userInput.value;
+            messages.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+            userInput.value = '';
+            // Here you would call the AI API to get the response and display it.
+        };
+    </script>
+</body>
+</html>
